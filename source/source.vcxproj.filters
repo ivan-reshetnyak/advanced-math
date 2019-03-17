@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Functions">
+      <UniqueIdentifier>{68761ffc-dd1a-4f88-a372-b325a66f8bd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions\Instances">
+      <UniqueIdentifier>{da8abc4b-04b0-413c-888d-a1077fd6b17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interpolation">
+      <UniqueIdentifier>{277e40b1-5afb-4aad-ad10-2836f16ef9a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interpolation\Instances">
+      <UniqueIdentifier>{08ef0c2b-a046-458d-b2e0-d7dec008e189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Collections">
+      <UniqueIdentifier>{5371a892-73a2-4cee-b8a0-0e11ca1f89ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Grids">
+      <UniqueIdentifier>{a2eb56d5-e8f4-4fc2-a54c-ed74a429dc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Equations">
+      <UniqueIdentifier>{c2b98629-a9a7-4f93-9c1f-687806625b05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Equations\Solvers">
+      <UniqueIdentifier>{13fd08ab-a781-41ad-98a3-760f8d034d61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="advanced math.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="function\exponent.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\lambda.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\polynomial.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\sum.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\function.h">
+      <Filter>Source Files\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolation\interpolator.h">
+      <Filter>Source Files\Interpolation</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolation\polynomial_newton.h">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="definitions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="functions.h">
+      <Filter>Source Files\Collections</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolators.h">
+      <Filter>Source Files\Collections</Filter>
+    </ClInclude>
+    <ClInclude Include="grids\chebyshev.h">
+      <Filter>Source Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="grids\regular.h">
+      <Filter>Source Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="grids.h">
+      <Filter>Source Files\Collections</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolation\polynomial_hermit.h">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolation\least_squares.h">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\sle.h">
+      <Filter>Source Files\Equations</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver.h">
+      <Filter>Source Files\Equations</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_sle_inverse.h">
+      <Filter>Source Files\Equations\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="function\lambda.cpp">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="function\polynomial.cpp">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="function\sum.cpp">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="function\function.cpp">
+      <Filter>Source Files\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interpolation\polynomial_newton.cpp">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="grids\chebyshev.cpp">
+      <Filter>Source Files\Grids</Filter>
+    </ClCompile>
+    <ClCompile Include="grids\regular.cpp">
+      <Filter>Source Files\Grids</Filter>
+    </ClCompile>
+    <ClCompile Include="definitions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interpolation\polynomial_hermit.cpp">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
