@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include "../stdafx.h"
 
 #include "interpolator.h"
 #include "../function/polynomial.h"

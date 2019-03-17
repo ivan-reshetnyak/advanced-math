@@ -45,9 +45,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="advanced math.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="function\exponent.h">
       <Filter>Source Files\Functions\Instances</Filter>
     </ClInclude>
@@ -108,6 +105,9 @@
     <ClInclude Include="vector.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="advanced math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="function\lambda.cpp">
@@ -142,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="matrix.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interpolation\least_squares.cpp">
+      <Filter>Source Files\Interpolation\Instances</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

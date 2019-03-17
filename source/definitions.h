@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include "stdafx.h"
 
 namespace adv_math {
 

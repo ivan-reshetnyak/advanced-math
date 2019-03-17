@@ -1,7 +1,5 @@
 #include "stdafx.h"
 
-#include <cmath>
-
 #include "chebyshev.h"
 
 namespace adv_math {

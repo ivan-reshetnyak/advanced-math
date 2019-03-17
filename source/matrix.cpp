@@ -74,6 +74,11 @@ double matrix::determinant( void ) const {
 }
 
 matrix & matrix::inverse( void ) {
+  if (getW() == 1 && getH() == 1) {
+    (*this)[0][0] = 1. / (*this)[0][0];
+    return *this;
+  }
+
   (*this) = adjoint() / determinant();
   NeedUpdate = true;
   return *this;

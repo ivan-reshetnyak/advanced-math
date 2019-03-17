@@ -1,7 +1,6 @@
 #pragma once
 
-#include <functional>
-#include <vector>
+#include "../stdafx.h"
 
 #include "function.h"
 

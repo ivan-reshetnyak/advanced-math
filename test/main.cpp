@@ -1,6 +1,3 @@
-#include <iostream>
-#include <iomanip>
-#include <vector>
 #include <conio.h>
 
 #include "../source/vector.h"

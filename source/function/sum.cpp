@@ -1,8 +1,5 @@
 #include "stdafx.h"
 
-#include <cmath>
-#include <fstream>
-
 #include "sum.h"
 
 namespace adv_math {

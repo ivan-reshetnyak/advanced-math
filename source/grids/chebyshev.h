@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../stdafx.h"
+
 #include "../definitions.h"
 #include "../function/function.h"
 

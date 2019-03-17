@@ -1,8 +1,5 @@
 #include "stdafx.h"
 
-#include <cmath>
-#include <fstream>
-
 #include "lambda.h"
 
 namespace adv_math {
