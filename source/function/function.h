@@ -25,4 +25,7 @@ protected:
   //virtual void derive( function &Der ) const;
 };
 
+#define derived_from_function(template_class) \
+  class = typename std::enable_if<std::is_base_of_v<function, template_class>>::type
+
 } // End of 'adv_math' namespace

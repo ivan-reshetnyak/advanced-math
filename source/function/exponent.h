@@ -7,7 +7,8 @@
 namespace adv_math {
 namespace func {
 
-template<class function_type>
+template<class function_type,
+  derived_from_function(function_type)>
 class exp : public function {
 public:
   exp( const function_type &Power ) : Power(Power) {
@@ -25,7 +26,7 @@ protected:
   }
 
   virtual void print( std::ostream &Stream ) const override {
-    Stream << "e^(" << Power << ") ";
+    Stream << "e^(" << Power << ")";
   }
 };
 

@@ -37,6 +37,9 @@
     <Filter Include="Source Files\Equations\Solvers">
       <UniqueIdentifier>{13fd08ab-a781-41ad-98a3-760f8d034d61}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Integration">
+      <UniqueIdentifier>{2adeb2be-eb5a-49e7-981c-0e52f2844b07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -52,9 +55,6 @@
       <Filter>Source Files\Functions\Instances</Filter>
     </ClInclude>
     <ClInclude Include="function\polynomial.h">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="function\sum.h">
       <Filter>Source Files\Functions\Instances</Filter>
     </ClInclude>
     <ClInclude Include="function\function.h">
@@ -108,15 +108,24 @@
     <ClInclude Include="advanced math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="integration\integrator.h">
+      <Filter>Source Files\Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="integration\trapezoidal.h">
+      <Filter>Source Files\Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="function\trigonometric.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\basic.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="function\lambda.cpp">
       <Filter>Source Files\Functions\Instances</Filter>
     </ClCompile>
     <ClCompile Include="function\polynomial.cpp">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClCompile>
-    <ClCompile Include="function\sum.cpp">
       <Filter>Source Files\Functions\Instances</Filter>
     </ClCompile>
     <ClCompile Include="function\function.cpp">

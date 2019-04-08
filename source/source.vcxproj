@@ -160,10 +160,13 @@
     <ClInclude Include="function\function.h" />
     <ClInclude Include="function\lambda.h" />
     <ClInclude Include="function\polynomial.h" />
-    <ClInclude Include="function\sum.h" />
+    <ClInclude Include="function\basic.h" />
+    <ClInclude Include="function\trigonometric.h" />
     <ClInclude Include="grids.h" />
     <ClInclude Include="grids\chebyshev.h" />
     <ClInclude Include="grids\regular.h" />
+    <ClInclude Include="integration\integrator.h" />
+    <ClInclude Include="integration\trapezoidal.h" />
     <ClInclude Include="interpolation\interpolator.h" />
     <ClInclude Include="interpolation\least_squares.h" />
     <ClInclude Include="interpolation\polynomial_hermit.h" />
@@ -179,7 +182,6 @@
     <ClCompile Include="function\function.cpp" />
     <ClCompile Include="function\lambda.cpp" />
     <ClCompile Include="function\polynomial.cpp" />
-    <ClCompile Include="function\sum.cpp" />
     <ClCompile Include="grids\chebyshev.cpp" />
     <ClCompile Include="grids\regular.cpp" />
     <ClCompile Include="interpolation\least_squares.cpp" />
