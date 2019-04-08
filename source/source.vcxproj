@@ -167,6 +167,7 @@
     <ClInclude Include="grids\regular.h" />
     <ClInclude Include="integration\integrator.h" />
     <ClInclude Include="integration\trapezoidal.h" />
+    <ClInclude Include="integrators.h" />
     <ClInclude Include="interpolation\interpolator.h" />
     <ClInclude Include="interpolation\least_squares.h" />
     <ClInclude Include="interpolation\polynomial_hermit.h" />
@@ -184,6 +185,7 @@
     <ClCompile Include="function\polynomial.cpp" />
     <ClCompile Include="grids\chebyshev.cpp" />
     <ClCompile Include="grids\regular.cpp" />
+    <ClCompile Include="integration\trapezoidal.cpp" />
     <ClCompile Include="interpolation\least_squares.cpp" />
     <ClCompile Include="interpolation\polynomial_hermit.cpp" />
     <ClCompile Include="interpolation\polynomial_newton.cpp" />

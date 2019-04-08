@@ -40,6 +40,9 @@
     <Filter Include="Source Files\Integration">
       <UniqueIdentifier>{2adeb2be-eb5a-49e7-981c-0e52f2844b07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Integration\Instances">
+      <UniqueIdentifier>{5c1a92da-69a5-4929-b614-0419fe1fdc37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -108,17 +111,20 @@
     <ClInclude Include="advanced math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="integration\integrator.h">
-      <Filter>Source Files\Integration</Filter>
-    </ClInclude>
-    <ClInclude Include="integration\trapezoidal.h">
-      <Filter>Source Files\Integration</Filter>
-    </ClInclude>
     <ClInclude Include="function\trigonometric.h">
       <Filter>Source Files\Functions\Instances</Filter>
     </ClInclude>
     <ClInclude Include="function\basic.h">
       <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="integration\trapezoidal.h">
+      <Filter>Source Files\Integration\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="integration\integrator.h">
+      <Filter>Source Files\Integration</Filter>
+    </ClInclude>
+    <ClInclude Include="integrators.h">
+      <Filter>Source Files\Collections</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +160,9 @@
     </ClCompile>
     <ClCompile Include="interpolation\least_squares.cpp">
       <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="integration\trapezoidal.cpp">
+      <Filter>Source Files\Integration\Instances</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
