@@ -9,7 +9,7 @@ namespace adv_math {
 class integrator {
 public:
   integrator( void ) = default;
-  virtual double integrate( const function &Func, double LowerBound, double UpperBound ) = 0;
+  virtual double integrate( const function &Func, double LowerBound, double UpperBound ) const = 0;
 };
 
 } // End of 'adv_math' namespace

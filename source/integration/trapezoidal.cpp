@@ -7,14 +7,14 @@
 namespace adv_math {
 namespace integr {
 
-trapezoidal::trapezoidal( double Tolerance ) : Tolerance(Tolerance) {
+trapezoidal::trapezoidal( double Tolerance ) : Tolerance(Tolerance), PrevDivs(1) {
 }
 
 void trapezoidal::setTolerance( double NewTolerance ) {
   Tolerance = NewTolerance;
 }
 
-double trapezoidal::integrate( const function &Func, double LowerBound, double UpperBound ) {
+double trapezoidal::integrate( const function &Func, double LowerBound, double UpperBound ) const {
   //std::unordered_map<double, double> FVal;
   int Divs = 1;
   double Error, PrevVal = 0;
@@ -30,9 +30,19 @@ double trapezoidal::integrate( const function &Func, double LowerBound, double U
     Error = 1. / 3. * std::abs(Val - PrevVal);
     PrevVal = Val;
     Divs *= 2;
-  } while (Error > Tolerance);
+  } while (Divs <= 2 || Error > Tolerance);
 
+  PrevDivs = Divs / 2;
+  PrevError = Error;
   return PrevVal;
+}
+
+int trapezoidal::getDivisions( void ) const {
+  return PrevDivs;
+}
+
+double trapezoidal::getError( void ) const {
+  return PrevError;
 }
 
 } // End of 'integr' namespace
