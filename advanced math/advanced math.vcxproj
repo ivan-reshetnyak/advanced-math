@@ -23,8 +23,8 @@
     <ProjectGuid>{2561AD00-9790-453D-87CD-6289E1194A21}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>source</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>source</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>advanced math</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -155,24 +155,22 @@
     <ClInclude Include="equations\sle.h" />
     <ClInclude Include="equations\solver.h" />
     <ClInclude Include="equations\solver_sle_inverse.h" />
-    <ClInclude Include="functions.h" />
-    <ClInclude Include="function\exponent.h" />
+    <ClInclude Include="equations\solver_sle_triangular.h" />
+    <ClInclude Include="function\function_exponent.h" />
     <ClInclude Include="function\function.h" />
-    <ClInclude Include="function\lambda.h" />
-    <ClInclude Include="function\polynomial.h" />
-    <ClInclude Include="function\basic.h" />
-    <ClInclude Include="function\trigonometric.h" />
-    <ClInclude Include="grids.h" />
-    <ClInclude Include="grids\chebyshev.h" />
-    <ClInclude Include="grids\regular.h" />
+    <ClInclude Include="function\function_lambda.h" />
+    <ClInclude Include="function\function_polynomial.h" />
+    <ClInclude Include="function\function_basic.h" />
+    <ClInclude Include="function\function_trigonometric.h" />
+    <ClInclude Include="grids\grid_chebyshev.h" />
+    <ClInclude Include="grids\grid_regular.h" />
+    <ClInclude Include="integration\integrator_chebyshev.h" />
     <ClInclude Include="integration\integrator.h" />
-    <ClInclude Include="integration\trapezoidal.h" />
-    <ClInclude Include="integrators.h" />
+    <ClInclude Include="integration\integrator_trapezoidal.h" />
     <ClInclude Include="interpolation\interpolator.h" />
-    <ClInclude Include="interpolation\least_squares.h" />
-    <ClInclude Include="interpolation\polynomial_hermit.h" />
-    <ClInclude Include="interpolation\polynomial_newton.h" />
-    <ClInclude Include="interpolators.h" />
+    <ClInclude Include="interpolation\interpolator_least_squares.h" />
+    <ClInclude Include="interpolation\interpolator_polynomial_hermit.h" />
+    <ClInclude Include="interpolation\interpolator_polynomial_newton.h" />
     <ClInclude Include="matrix.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -181,14 +179,15 @@
   <ItemGroup>
     <ClCompile Include="definitions.cpp" />
     <ClCompile Include="function\function.cpp" />
-    <ClCompile Include="function\lambda.cpp" />
-    <ClCompile Include="function\polynomial.cpp" />
-    <ClCompile Include="grids\chebyshev.cpp" />
-    <ClCompile Include="grids\regular.cpp" />
-    <ClCompile Include="integration\trapezoidal.cpp" />
-    <ClCompile Include="interpolation\least_squares.cpp" />
-    <ClCompile Include="interpolation\polynomial_hermit.cpp" />
-    <ClCompile Include="interpolation\polynomial_newton.cpp" />
+    <ClCompile Include="function\function_lambda.cpp" />
+    <ClCompile Include="function\function_polynomial.cpp" />
+    <ClCompile Include="grids\grid_chebyshev.cpp" />
+    <ClCompile Include="grids\grid_regular.cpp" />
+    <ClCompile Include="integration\integrator_chebyshev.cpp" />
+    <ClCompile Include="integration\integrator_trapezoidal.cpp" />
+    <ClCompile Include="interpolation\interpolator_least_squares.cpp" />
+    <ClCompile Include="interpolation\interpolator_polynomial_hermit.cpp" />
+    <ClCompile Include="interpolation\interpolator_polynomial_newton.cpp" />
     <ClCompile Include="matrix.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

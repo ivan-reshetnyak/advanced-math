@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "lambda.h"
+#include "function_lambda.h"
 
 namespace adv_math {
 namespace func {

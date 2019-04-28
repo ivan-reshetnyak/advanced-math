@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "regular.h"
+#include "grid_regular.h"
 
 namespace adv_math {
 namespace grids {

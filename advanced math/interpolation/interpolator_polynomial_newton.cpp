@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "polynomial_newton.h"
+#include "interpolator_polynomial_newton.h"
 
 namespace adv_math {
 namespace interp {

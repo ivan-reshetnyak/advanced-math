@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
-#include "least_squares.h"
-#include "../function/polynomial.h"
+#include "interpolator_least_squares.h"
+#include "../function/function_polynomial.h"
 #include "../equations/sle.h"
 #include "../equations/solver_sle_inverse.h"
 

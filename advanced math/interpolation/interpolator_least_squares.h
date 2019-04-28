@@ -3,7 +3,7 @@
 #include "../stdafx.h"
 
 #include "interpolator.h"
-#include "../function/polynomial.h"
+#include "../function/function_polynomial.h"
 #include "../equations/sle.h"
 #include "../equations/solver_sle_inverse.h"
 

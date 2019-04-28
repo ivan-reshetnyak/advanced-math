@@ -5,8 +5,9 @@
 namespace adv_math {
 
 std::ostream & operator<<( std::ostream &Stream, const matrix &Matr ) {
-  for (int ix = 0, sx = Matr.getW(); ix < sx; ix++) {
-    for (int iy = 0, sy = Matr.getH(); iy < sy; iy++)
+  int W = Matr.getW(), H = Matr.getH();
+  for (int iy = 0; iy < H; iy++) {
+    for (int ix = 0; ix < W; ix++)
       Stream << Matr[ix][iy] << " ";
     Stream << std::endl;
   }
@@ -18,6 +19,7 @@ matrix::matrix( int W, int H ) : NeedUpdate(true) {
 }
 
 matrix::matrix( const row_t &MIn ) : Data(MIn), NeedUpdate(true) {
+  transpose();
 }
 
 int matrix::getW( void ) const {
@@ -161,6 +163,19 @@ matrix & matrix::square( void ) {
   int size = min(getW(), getH());
 
   return slice({0, 0}, {size - 1, size - 1});
+}
+
+matrix & matrix::transpose( void ) {
+  int W = getW(), H = getH();
+  for (int Y = 0; Y < H; Y++)
+    for (int X = 0; X < Y; X++)
+      std::swap((*this)[X][Y], (*this)[Y][X]);
+
+  return *this;
+}
+
+matrix matrix::transposed( void ) const {
+  return matrix(*this).transpose();
 }
 
 } // End of 'adv_math' namespace

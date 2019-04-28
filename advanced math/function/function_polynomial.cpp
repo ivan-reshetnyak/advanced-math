@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "polynomial.h"
+#include "function_polynomial.h"
 
 namespace adv_math {
 namespace func {

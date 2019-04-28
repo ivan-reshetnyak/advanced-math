@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "chebyshev.h"
+#include "grid_chebyshev.h"
 
 namespace adv_math {
 namespace grids {

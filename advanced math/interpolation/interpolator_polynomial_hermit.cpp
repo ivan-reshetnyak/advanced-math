@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "polynomial_hermit.h"
+#include "interpolator_polynomial_hermit.h"
 
 namespace adv_math {
 namespace interp {

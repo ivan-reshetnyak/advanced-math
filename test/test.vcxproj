@@ -22,7 +22,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\source\source.vcxproj">
+    <ProjectReference Include="..\advanced math\advanced math.vcxproj">
       <Project>{2561ad00-9790-453d-87cd-6289e1194a21}</Project>
     </ProjectReference>
   </ItemGroup>

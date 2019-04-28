@@ -51,47 +51,14 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="function\exponent.h">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="function\lambda.h">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="function\polynomial.h">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClInclude>
     <ClInclude Include="function\function.h">
       <Filter>Source Files\Functions</Filter>
     </ClInclude>
     <ClInclude Include="interpolation\interpolator.h">
       <Filter>Source Files\Interpolation</Filter>
     </ClInclude>
-    <ClInclude Include="interpolation\polynomial_newton.h">
-      <Filter>Source Files\Interpolation\Instances</Filter>
-    </ClInclude>
     <ClInclude Include="definitions.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="functions.h">
-      <Filter>Source Files\Collections</Filter>
-    </ClInclude>
-    <ClInclude Include="interpolators.h">
-      <Filter>Source Files\Collections</Filter>
-    </ClInclude>
-    <ClInclude Include="grids\chebyshev.h">
-      <Filter>Source Files\Grids</Filter>
-    </ClInclude>
-    <ClInclude Include="grids\regular.h">
-      <Filter>Source Files\Grids</Filter>
-    </ClInclude>
-    <ClInclude Include="grids.h">
-      <Filter>Source Files\Collections</Filter>
-    </ClInclude>
-    <ClInclude Include="interpolation\polynomial_hermit.h">
-      <Filter>Source Files\Interpolation\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="interpolation\least_squares.h">
-      <Filter>Source Files\Interpolation\Instances</Filter>
     </ClInclude>
     <ClInclude Include="equations\sle.h">
       <Filter>Source Files\Equations</Filter>
@@ -111,58 +78,88 @@
     <ClInclude Include="advanced math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="function\trigonometric.h">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="function\basic.h">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClInclude>
-    <ClInclude Include="integration\trapezoidal.h">
-      <Filter>Source Files\Integration\Instances</Filter>
-    </ClInclude>
     <ClInclude Include="integration\integrator.h">
       <Filter>Source Files\Integration</Filter>
     </ClInclude>
-    <ClInclude Include="integrators.h">
-      <Filter>Source Files\Collections</Filter>
+    <ClInclude Include="equations\solver_sle_triangular.h">
+      <Filter>Source Files\Equations\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="function\function_basic.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\function_exponent.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\function_lambda.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\function_polynomial.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="function\function_trigonometric.h">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="grids\grid_chebyshev.h">
+      <Filter>Source Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="grids\grid_regular.h">
+      <Filter>Source Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="integration\integrator_chebyshev.h">
+      <Filter>Source Files\Integration\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="integration\integrator_trapezoidal.h">
+      <Filter>Source Files\Integration\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolation\interpolator_least_squares.h">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolation\interpolator_polynomial_hermit.h">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolation\interpolator_polynomial_newton.h">
+      <Filter>Source Files\Interpolation\Instances</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="function\lambda.cpp">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClCompile>
-    <ClCompile Include="function\polynomial.cpp">
-      <Filter>Source Files\Functions\Instances</Filter>
-    </ClCompile>
     <ClCompile Include="function\function.cpp">
       <Filter>Source Files\Functions</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="interpolation\polynomial_newton.cpp">
-      <Filter>Source Files\Interpolation\Instances</Filter>
-    </ClCompile>
-    <ClCompile Include="grids\chebyshev.cpp">
-      <Filter>Source Files\Grids</Filter>
-    </ClCompile>
-    <ClCompile Include="grids\regular.cpp">
-      <Filter>Source Files\Grids</Filter>
-    </ClCompile>
     <ClCompile Include="definitions.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="interpolation\polynomial_hermit.cpp">
-      <Filter>Source Files\Interpolation\Instances</Filter>
     </ClCompile>
     <ClCompile Include="matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="interpolation\least_squares.cpp">
+    <ClCompile Include="function\function_lambda.cpp">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="function\function_polynomial.cpp">
+      <Filter>Source Files\Functions\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="grids\grid_chebyshev.cpp">
+      <Filter>Source Files\Grids</Filter>
+    </ClCompile>
+    <ClCompile Include="grids\grid_regular.cpp">
+      <Filter>Source Files\Grids</Filter>
+    </ClCompile>
+    <ClCompile Include="integration\integrator_chebyshev.cpp">
+      <Filter>Source Files\Integration\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="integration\integrator_trapezoidal.cpp">
+      <Filter>Source Files\Integration\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="interpolation\interpolator_least_squares.cpp">
       <Filter>Source Files\Interpolation\Instances</Filter>
     </ClCompile>
-    <ClCompile Include="integration\trapezoidal.cpp">
-      <Filter>Source Files\Integration\Instances</Filter>
+    <ClCompile Include="interpolation\interpolator_polynomial_hermit.cpp">
+      <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClCompile>
+    <ClCompile Include="interpolation\interpolator_polynomial_newton.cpp">
+      <Filter>Source Files\Interpolation\Instances</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
