@@ -178,4 +178,13 @@ matrix matrix::transposed( void ) const {
   return matrix(*this).transpose();
 }
 
+matrix matrix::identity( int Size ) {
+  matrix M(Size, Size);
+
+  for (int i = 0; i < Size; i++)
+    M[i][i] = 1;
+
+  return M;
+}
+
 } // End of 'adv_math' namespace

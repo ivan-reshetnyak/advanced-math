@@ -43,6 +43,8 @@ public:
 
   matrix & transpose( void );
   matrix transposed( void ) const;
+
+  static matrix identity( int Size );
 };
 
 std::ostream & operator<<( std::ostream &Stream, const matrix &Matr );

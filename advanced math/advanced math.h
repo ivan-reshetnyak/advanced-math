@@ -9,6 +9,7 @@
 #include "equations/solver.h"
 #include "equations/solver_sle_inverse.h"
 #include "equations/solver_sle_triangular.h"
+#include "equations/solver_sle_lu.h"
 
 // Grids
 #include "grids/grid_chebyshev.h"

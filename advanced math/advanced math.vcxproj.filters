@@ -25,9 +25,6 @@
     <Filter Include="Source Files\Interpolation\Instances">
       <UniqueIdentifier>{08ef0c2b-a046-458d-b2e0-d7dec008e189}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Collections">
-      <UniqueIdentifier>{5371a892-73a2-4cee-b8a0-0e11ca1f89ec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Grids">
       <UniqueIdentifier>{a2eb56d5-e8f4-4fc2-a54c-ed74a429dc17}</UniqueIdentifier>
     </Filter>
@@ -46,9 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="function\function.h">
@@ -119,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="interpolation\interpolator_polynomial_newton.h">
       <Filter>Source Files\Interpolation\Instances</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_sle_lu.h">
+      <Filter>Source Files\Equations\Solvers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

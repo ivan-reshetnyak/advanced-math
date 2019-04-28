@@ -28,6 +28,11 @@ int main( void ) {
   Roots = equations::solver_sle_triangular_upper().solve(SLE);
   cout << M << Roots << endl;
 
+  M = matrix({{10, -7, 0}, {-3, 6, 2}, {5, -1, 5}});
+  SLE = { M, vector({1, 1, 1}) };
+  Roots = equations::solver_sle_lu().solve(SLE);
+  cout << M << Roots << endl;
+
   _getch();
   return 0;
 }

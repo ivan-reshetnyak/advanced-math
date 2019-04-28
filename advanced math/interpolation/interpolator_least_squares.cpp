@@ -3,7 +3,7 @@
 #include "interpolator_least_squares.h"
 #include "../function/function_polynomial.h"
 #include "../equations/sle.h"
-#include "../equations/solver_sle_inverse.h"
+#include "../equations/solver_sle_lu.h"
 
 namespace adv_math {
 namespace interp {
@@ -42,7 +42,7 @@ void least_squares::update( const grid &Points ) {
   SysM.square();
   SysC.resize(SysM.getH());
 
-  equations::solver_sle_inverse Solver;
+  equations::solver_sle_lu Solver;
   auto Result = Solver.solve(equations::sle(SysM, SysC));
   //if (Result.)
   const auto &Roots = Result.getRoots();
