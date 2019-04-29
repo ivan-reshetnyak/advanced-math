@@ -24,10 +24,12 @@
 #include "function/function_exponent.h"
 
 // Interpolators
+#include "interpolation/interpolator.h"
 #include "interpolation/interpolator_polynomial_newton.h"
 #include "interpolation/interpolator_polynomial_hermit.h"
 #include "interpolation/interpolator_least_squares.h"
 
 // Integrators
-#include "interpolation/interpolator.h"
+#include "integration/integrator.h"
 #include "integration/integrator_trapezoidal.h"
+#include "integration/integrator_chebyshev.h"

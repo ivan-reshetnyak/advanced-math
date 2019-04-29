@@ -7,58 +7,43 @@
 namespace adv_math {
 namespace integr {
 
-chebyshev::chebyshev( double Tolerance ) : Tolerance(Tolerance), PrevDivs(1) {
+double chebyshev::abscissa( int N ) const {
+  static
+    std::vector<std::vector<double>> Pt = {
+      {},                                                                    // 1
+      { -0.57735, 0.57735 },                                                 // 2
+      { -0.707107, 0, 0.57735 },                                             // 3
+      { -0.794654, -0.187592, 0.187592, 0.794654 },                          // 4
+      { -0.832498, -0.374541, 0, 0.374541, 0.832498 },                       // 5
+      { -0.866247, -0.422519, -0.266635, 0.266635, 0.422519, 0.866247 },     // 6
+      { -0.883862, -0.529657, -0.321912, 0, 0.321912, 0.529657, 0.883862 },  // 7
+      {},                                                                    // 8
+      { -0.911589, -0.601019, -0.528762, -0.167906, 0,
+        0.167906, 0.528762, 0.601019, 0.911589 } };                          // 9
+
+  if (NoofPoints < 2 || NoofPoints == 8 || NoofPoints > 9)
+    throw std::exception("Chebyshev formulae works with 2-7 or 9 points only!");
+  else
+    return Pt[NoofPoints - 1][N - 1];
 }
 
-void chebyshev::setTolerance( double NewTolerance ) {
-  Tolerance = NewTolerance;
+chebyshev::chebyshev( int NoofPoints ) : NoofPoints(NoofPoints) {
+  if (NoofPoints < 2 || NoofPoints == 8 || NoofPoints > 9)
+    throw std::exception("Chebyshev formulae works with 2-7 or 9 points only!");
 }
 
-double chebyshev::step( const function &Func, double LowerBound, double UpperBound, double PrevVal, int Divs ) const {
-  double X = LowerBound, DX = (UpperBound - LowerBound) / Divs, Val = 0;
-
-  for (int i = 0; i < Divs; i++) {
-    Val += DX * 0.5 * (Func(X) + Func(X + DX));
-    X += DX;
-  }
-
-  PrevError = 1. / 3. * std::abs(Val - PrevVal);
-
-  return Val;
+void chebyshev::setNoofPoints( int NewNoofPoints ) {
+  NoofPoints = NewNoofPoints;
 }
 
 double chebyshev::integrate( const function &Func, double LowerBound, double UpperBound ) const {
-  int Divs = 1;
-  double PrevVal = 0;
-
-  do {
-    PrevVal = step(Func, LowerBound, UpperBound, PrevVal, Divs);
-    Divs *= 2;
-  } while (Divs <= 2 || PrevError > Tolerance);
-
-  PrevDivs = Divs / 2;
-  return PrevVal;
-}
-
-double chebyshev::runSteps( const function &Func, double LowerBound, double UpperBound, int Steps ) const {
-  int Divs = 1;
-  double PrevVal = 0;
-
-  for (int Step = 0; Step < Steps; Step++) {
-    PrevVal = step(Func, LowerBound, UpperBound, PrevVal, Divs);
-    Divs *= 2;
-  }
-
-  PrevDivs = Divs / 2;
-  return PrevVal;
-}
-
-int chebyshev::getDivisions( void ) const {
-  return PrevDivs;
-}
-
-double chebyshev::getError( void ) const {
-  return PrevError;
+  double
+    Sum = 0,
+    Shift = 0.5 * (UpperBound + LowerBound),
+    Stretch = 0.5 * (UpperBound - LowerBound);
+  for (int i = 1; i <= NoofPoints; i++)
+    Sum += Func(Shift + Stretch * abscissa(i));
+  return Sum * (UpperBound - LowerBound) / NoofPoints;
 }
 
 } // End of 'integr' namespace
