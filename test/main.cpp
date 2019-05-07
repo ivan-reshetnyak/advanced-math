@@ -8,6 +8,7 @@ using std::cout;
 using std::endl;
 
 int main( void ) {
+  /*
   auto Func = func::constant(1) / (func::sin<func::x>(func::x()) + func::cos<func::x>(func::x()));
   integr::trapezoidal TrInt(0.01);
   integr::chebyshev ChInts[] = { integr::chebyshev(2), integr::chebyshev(3),
@@ -17,6 +18,12 @@ int main( void ) {
   cout << TrInt.integrate(Func, -0.2, 0.6) << endl;
   for (const auto &Cheb : ChInts)
     cout << Cheb.integrate(Func, -0.2, 0.6) << endl;
+    */
+  auto Cd = func::constant(10).derivative();
+  auto Func = func::constant(1) + func::x() + Cd.derivative();
+
+  cout << Cd << endl;
+  cout << Func << endl;
 
   _getch();
   return 0;
