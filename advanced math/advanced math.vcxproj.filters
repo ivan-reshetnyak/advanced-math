@@ -31,14 +31,17 @@
     <Filter Include="Source Files\Equations">
       <UniqueIdentifier>{c2b98629-a9a7-4f93-9c1f-687806625b05}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Equations\Solvers">
-      <UniqueIdentifier>{13fd08ab-a781-41ad-98a3-760f8d034d61}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Integration">
       <UniqueIdentifier>{2adeb2be-eb5a-49e7-981c-0e52f2844b07}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Integration\Instances">
       <UniqueIdentifier>{5c1a92da-69a5-4929-b614-0419fe1fdc37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Equations\Differential">
+      <UniqueIdentifier>{4ad01b97-229c-480c-9cf7-a279e1de394c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Equations\Linear">
+      <UniqueIdentifier>{13fd08ab-a781-41ad-98a3-760f8d034d61}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,9 +57,6 @@
     <ClInclude Include="definitions.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="equations\sle.h">
-      <Filter>Source Files\Equations</Filter>
-    </ClInclude>
     <ClInclude Include="matrix.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -64,7 +64,7 @@
       <Filter>Source Files\Equations</Filter>
     </ClInclude>
     <ClInclude Include="equations\solver_sle_inverse.h">
-      <Filter>Source Files\Equations\Solvers</Filter>
+      <Filter>Source Files\Equations\Linear</Filter>
     </ClInclude>
     <ClInclude Include="vector.h">
       <Filter>Source Files</Filter>
@@ -76,7 +76,7 @@
       <Filter>Source Files\Integration</Filter>
     </ClInclude>
     <ClInclude Include="equations\solver_sle_triangular.h">
-      <Filter>Source Files\Equations\Solvers</Filter>
+      <Filter>Source Files\Equations\Linear</Filter>
     </ClInclude>
     <ClInclude Include="function\function_basic.h">
       <Filter>Source Files\Functions\Instances</Filter>
@@ -115,7 +115,16 @@
       <Filter>Source Files\Interpolation\Instances</Filter>
     </ClInclude>
     <ClInclude Include="equations\solver_sle_lu.h">
-      <Filter>Source Files\Equations\Solvers</Filter>
+      <Filter>Source Files\Equations\Linear</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\sle.h">
+      <Filter>Source Files\Equations\Linear</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_runge_kutta.h">
+      <Filter>Source Files\Equations\Differential</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\equation_differential.h">
+      <Filter>Source Files\Equations\Differential</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

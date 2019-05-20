@@ -27,6 +27,9 @@ class point {
 public:
   double X, Y;
 
+  point( double X = 0, double Y = 0 ) : X(X), Y(Y) {
+  }
+
   point operator+( const point &R ) const;
   point & operator+=( const point &R );
   point operator-( const point &R ) const;

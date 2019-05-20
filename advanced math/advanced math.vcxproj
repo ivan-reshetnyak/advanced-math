@@ -152,6 +152,8 @@
   <ItemGroup>
     <ClInclude Include="advanced math.h" />
     <ClInclude Include="definitions.h" />
+    <ClInclude Include="equations\equation_differential.h" />
+    <ClInclude Include="equations\solver_runge_kutta.h" />
     <ClInclude Include="equations\sle.h" />
     <ClInclude Include="equations\solver.h" />
     <ClInclude Include="equations\solver_sle_inverse.h" />

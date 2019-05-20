@@ -5,11 +5,15 @@
 #include "vector.h"
 
 // Equations
-#include "equations/sle.h"
 #include "equations/solver.h"
+// Linear
+#include "equations/sle.h"
 #include "equations/solver_sle_inverse.h"
 #include "equations/solver_sle_triangular.h"
 #include "equations/solver_sle_lu.h"
+// Differential
+#include "equations/equation_differential.h"
+#include "equations/solver_runge_kutta.h"
 
 // Grids
 #include "grids/grid_chebyshev.h"

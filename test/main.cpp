@@ -19,11 +19,18 @@ int main( void ) {
   for (const auto &Cheb : ChInts)
     cout << Cheb.integrate(Func, -0.2, 0.6) << endl;
     */
+
+  /*
   auto Cd = func::constant(10).derivative();
   auto Func = func::constant(1) + func::x() + Cd.derivative();
-
   cout << Cd << endl;
   cout << Func << endl;
+  */
+
+  equations::differential_first_order DifEq([]( double X, double Y ) -> double { return 2. * Y; }, point(0, 1));
+  equations::solver_RK4 RKSolver(DifEq, 1);
+
+  cout << RKSolver(0) << " " << RKSolver(1) << " " << RKSolver(2) << endl;
 
   _getch();
   return 0;
