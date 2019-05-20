@@ -66,11 +66,11 @@ private:
       {  .5,  .0,  .0,  .0 },
       {  .0,  .5,  .0,  .0 },
       {  .0,  .0, 1.0,  .0 } };
-    return A[Y - 1][X] / H;
+    return A[Y - 1][X];
   }
 
   double weight( int X ) const final {
-    static double W[] = { 1. / 6, 2. / 6, 3. / 6, 1. / 6 };
+    static double W[] = { 1. / 6, 2. / 6, 2. / 6, 1. / 6 };
     return W[X];
   }
 
