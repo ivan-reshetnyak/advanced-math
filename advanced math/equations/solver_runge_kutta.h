@@ -84,5 +84,24 @@ public:
   }
 };
 
+class solver_euler_cauchy : public solver_runge_kutta<2> {
+private:
+  double matrix( int X, int Y ) const final {
+    return 1;
+  }
+
+  double weight( int X ) const final {
+    return 0.5;
+  }
+
+  double node( int Y ) const final {
+    return 1;
+  }
+
+public:
+  solver_euler_cauchy ( const differential_first_order &Eq, int Steps ) : solver_runge_kutta(Eq, Steps) {
+  }
+};
+
 } // End of 'equations' namespace
 } // End of 'adv_math' namespace
