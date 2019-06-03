@@ -10,7 +10,7 @@
 namespace adv_math {
 namespace equations {
 
-class differential_first_order {
+class differential {
 public:
   struct point {
     double X;
@@ -26,15 +26,15 @@ public:
   const function &F;
   const point &P;
 
-  differential_first_order( const function &Function, const point &Initials ) : Func(Function), Initial(Initials),
+  differential( const function &Function, const point &Initials ) : Func(Function), Initial(Initials),
     F(Func), P(Initial) {
   }
 
-  differential_first_order( const differential_first_order &RV ) : Func(RV.Func), Initial(RV.Initial),
+  differential( const differential &RV ) : Func(RV.Func), Initial(RV.Initial),
     F(Func), P(Initial) {
   }
 
-  differential_first_order & operator=( const differential_first_order &RV ) {
+  differential & operator=( const differential &RV ) {
     Func = RV.Func;
     Initial = RV.Initial;
     return *this;

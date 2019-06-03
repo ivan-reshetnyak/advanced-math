@@ -60,9 +60,6 @@
     <ClInclude Include="matrix.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="equations\solver.h">
-      <Filter>Source Files\Equations</Filter>
-    </ClInclude>
     <ClInclude Include="equations\solver_sle_inverse.h">
       <Filter>Source Files\Equations\Linear</Filter>
     </ClInclude>
@@ -128,6 +125,12 @@
     </ClInclude>
     <ClInclude Include="equations\solver_predictor_corrector.h">
       <Filter>Source Files\Equations\Differential</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_differential.h">
+      <Filter>Source Files\Equations\Differential</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver.h">
+      <Filter>Source Files\Equations\Linear</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,56 +3,50 @@
 #include "../stdafx.h"
 
 #include "../function/function.h"
-#include "equation_differential.h"
+#include "solver_differential.h"
 
 namespace adv_math {
-namespace equations {
+namespace solvers {
 
-template<int NoofStages>
-class solver_runge_kutta : public function {
-private:
-  void print( std::ostream &Stream ) const override {
-    Stream << "RK_" << NoofStages;
-  }
-
+class runge_kutta : public differential {
 protected:
-  int NoofSteps;
-  mutable double H;
-  const differential_first_order &Equation;
-
   virtual double matrix( int X, int Y ) const = 0;
   virtual double weight( int X ) const = 0;
   virtual double node( int Y ) const = 0;
 
-  virtual double at( double X ) const override {
+  virtual double at( double X, double Step ) const override {
     auto Y = Equation.P.Y;
-    H = (X - Equation.P.X) / NoofSteps;
+    int NoofSteps = (int)((X - Equation.P.X) / Step);
     X = Equation.P.X;
 
-    for (int Step = 0; Step < NoofSteps; Step++) {
-      std::vector<double> k(NoofStages);
+    for (int StepNum = 0; StepNum < NoofSteps; StepNum++) {
+      std::vector<double> k(Order);
       k[0] = Equation.F({X, Y});
-      for (int Yk = 1; Yk < NoofStages; Yk++) {
+      for (int Yk = 1; Yk < Order; Yk++) {
         auto Yc = Y;
         for (int Xk = 0; Xk < Yk; Xk++)
-          Yc += H * matrix(Xk, Yk) * k[Xk];
-        k[Yk] = Equation.F({X + H * node(Yk), Yc});
+          Yc += Step * matrix(Xk, Yk) * k[Xk];
+        k[Yk] = Equation.F({X + Step * node(Yk), Yc});
       }
 
-      for (int Stage = 0; Stage < NoofStages; Stage++)
-        Y += H * weight(Stage) * k[Stage];
-      X += H;
+      for (int Stage = 0; Stage < Order; Stage++)
+        Y += Step * weight(Stage) * k[Stage];
+      X += Step;
     }
 
     return Y[Y.size() - 1];
   }
 
+  void print( std::ostream &Stream ) const override {
+    Stream << "RK_" << Order;
+  }
+
 public:
-  solver_runge_kutta( const differential_first_order &Eq, int Steps ) : NoofSteps(Steps), Equation(Eq) {
+  runge_kutta( const equations::differential &Eq, double Precision, int Order ) : differential(Eq, Precision, Order) {
   }
 };
 
-class solver_RK4 : public solver_runge_kutta<4> {
+class RK4 : public runge_kutta {
 private:
   double matrix( int X, int Y ) const final {
     static double A[3][4] = {
@@ -73,11 +67,11 @@ private:
   }
 
 public:
-  solver_RK4( const differential_first_order &Eq, int Steps ) : solver_runge_kutta(Eq, Steps) {
+  RK4( const equations::differential &Eq, double Precision ) : runge_kutta(Eq, Precision, 4) {
   }
 };
 
-class solver_euler_cauchy : public solver_runge_kutta<2> {
+class euler_cauchy : public runge_kutta {
 private:
   double matrix( int X, int Y ) const final {
     return 1;
@@ -92,9 +86,9 @@ private:
   }
 
 public:
-  solver_euler_cauchy ( const differential_first_order &Eq, int Steps ) : solver_runge_kutta(Eq, Steps) {
+  euler_cauchy ( const equations::differential &Eq, double Precision ) : runge_kutta(Eq, Precision, 2) {
   }
 };
 
-} // End of 'equations' namespace
+} // End of 'solvers' namespace
 } // End of 'adv_math' namespace

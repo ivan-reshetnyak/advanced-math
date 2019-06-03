@@ -7,11 +7,11 @@
 #include "sle.h"
 
 namespace adv_math {
-namespace equations {
+namespace solvers {
 
-class solver_sle_lu : public solver<sle> {
+class sle_lu : public equations::solver<equations::sle> {
 public:
-  solution solve( const sle &SLE ) const override {
+  equations::solution solve( const equations::sle &SLE ) const override {
     int Size = SLE.getW();
     matrix L = matrix::identity(Size), U(Size, Size);
     const matrix &A = SLE;
@@ -38,11 +38,11 @@ public:
         }
       }
 
-    solution SolL = solver_sle_triangular_lower().solve(sle(L, SLE.getConstants()));
+    equations::solution SolL = sle_triangular_lower().solve(equations::sle(L, SLE.getConstants()));
 
-    return solver_sle_triangular_upper().solve(sle(U, SolL.getRoots()));
+    return sle_triangular_upper().solve(equations::sle(U, SolL.getRoots()));
   }
 };
 
-} // End of 'equations' namespace
+} // End of 'solvers' namespace
 } // End of 'adv_math' namespace

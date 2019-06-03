@@ -42,7 +42,7 @@ void least_squares::update( const grid &Points ) {
   SysM.square();
   SysC.resize(SysM.getH());
 
-  equations::solver_sle_lu Solver;
+  solvers::sle_lu Solver;
   auto Result = Solver.solve(equations::sle(SysM, SysC));
   //if (Result.)
   const auto &Roots = Result.getRoots();

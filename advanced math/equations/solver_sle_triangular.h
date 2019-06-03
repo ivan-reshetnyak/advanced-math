@@ -6,11 +6,11 @@
 #include "sle.h"
 
 namespace adv_math {
-namespace equations {
+namespace solvers {
 
-class solver_sle_triangular_lower : public solver<sle> {
+class sle_triangular_lower : public equations::solver<equations::sle> {
 public:
-  solution solve( const sle &SLE ) const override {
+  equations::solution solve( const equations::sle &SLE ) const override {
     vector Roots(SLE.getH());
     const vector &Cs = SLE.getConstants();
     for (int Y = 0, H = SLE.getH(); Y < H; Y++) {
@@ -20,13 +20,13 @@ public:
       Roots[Y] = C / SLE[Y][Y];
     }
 
-    return solution(Roots);
+    return equations::solution(Roots);
   }
 };
 
-class solver_sle_triangular_upper : public solver<sle> {
+class sle_triangular_upper : public equations::solver<equations::sle> {
 public:
-  solution solve( const sle &SLE ) const override {
+  equations::solution solve( const equations::sle &SLE ) const override {
     vector Roots(SLE.getH());
     const vector &Cs = SLE.getConstants();
     for (int H = SLE.getH(), Y = H - 1; Y >= 0; Y--) {
@@ -35,9 +35,9 @@ public:
         C -= Roots[X] * SLE[X][Y];
       Roots[Y] = C / SLE[Y][Y];
     }
-    return solution(Roots);
+    return equations::solution(Roots);
   }
 };
 
-} // End of 'equations' namespace
+} // End of 'solvers' namespace
 } // End of 'adv_math' namespace

@@ -6,17 +6,17 @@
 #include "sle.h"
 
 namespace adv_math {
-namespace equations {
+namespace solvers {
 
-class solver_sle_inverse : public solver<sle> {
+class sle_inverse : public equations::solver<equations::sle> {
 public:
-  solution solve( const sle &SLE ) const override {
+  equations::solution solve( const equations::sle &SLE ) const override {
     if (SLE.determinant() == 0)
-      return solution(solution::status::EMPTY);
+      return equations::solution(equations::solution::status::EMPTY);
     else
       return SLE.getConstants() * SLE.inversed();
   }
 };
 
-} // End of 'equations' namespace
+} // End of 'solvers' namespace
 } // End of 'adv_math' namespace

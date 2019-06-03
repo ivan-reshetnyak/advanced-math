@@ -153,6 +153,7 @@
     <ClInclude Include="advanced math.h" />
     <ClInclude Include="definitions.h" />
     <ClInclude Include="equations\equation_differential.h" />
+    <ClInclude Include="equations\solver_differential.h" />
     <ClInclude Include="equations\solver_predictor_corrector.h" />
     <ClInclude Include="equations\solver_runge_kutta.h" />
     <ClInclude Include="equations\sle.h" />
