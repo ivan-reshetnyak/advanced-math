@@ -25,6 +25,7 @@ protected:
   //virtual void derive( function &Der ) const;
 };
 
+/*
 template<class der_func>
 class derivable : public function {
 public:
@@ -36,6 +37,7 @@ public:
 protected:
   virtual der_func _derivative( void ) const = 0;
 };
+*/
 
 #define derived_from_function(template_class) \
   class = typename std::enable_if<std::is_base_of_v<function, template_class>>::type

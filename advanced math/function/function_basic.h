@@ -7,7 +7,7 @@
 namespace adv_math {
 namespace func {
 
-class constant : public derivable<constant> {
+class constant : public function {// public derivable<constant> {
 public:
   constant( double A ) : Value(A) {
   }
@@ -23,16 +23,18 @@ private:
     return 0;
   }
 
+  /*
   constant _derivative( void ) const override {
     return constant(0);
   }
+  */
 
   virtual void print( std::ostream &Stream ) const override {
     Stream << Value;
   }
 };
 
-class x : public derivable<constant> {
+class x : public function {// {
 public:
   x( void ) {
   }
@@ -46,9 +48,11 @@ private:
     return 1;
   }
 
+  /*
   constant _derivative( void ) const override {
     return constant(1);
   }
+  */
 
   virtual void print( std::ostream &Stream ) const override {
     Stream << "x";
@@ -56,7 +60,7 @@ private:
 };
 
 template<class func1, class func2>
-class sum : public derivable<sum<typename func1::derivative_t, typename func2::derivative_t>> {
+class sum : public function {//derivable<sum<typename func1::derivative_t, typename func2::derivative_t>> {
 public:
   sum( const func1 &F1, const func2 &F2 ) : Func1(F1), Func2(F2) {
   }
@@ -73,9 +77,11 @@ private:
     return Func1.derive(X) + Func2.derive(X);
   }
 
+  /*
   derivative_t _derivative( void ) const override {
     return derivative_t(Func1.derivative() + Func2.derivative());
   }
+  */
 
   virtual void print( std::ostream &Stream ) const override {
     Stream << "(" << Func1 << " + " << Func2 << ")";
