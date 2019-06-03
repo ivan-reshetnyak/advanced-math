@@ -2,6 +2,7 @@
 
 #include "../stdafx.h"
 
+#include <valarray>
 #include <functional>
 
 #include "../definitions.h"
@@ -10,16 +11,22 @@ namespace adv_math {
 namespace equations {
 
 class differential_first_order {
+public:
+  struct point {
+    double X;
+    std::valarray<double> Y;
+  };
+  using function = std::function<double ( const point & )>;
+
 private:
-  using func3d = std::function<double ( double, double )>;
-  func3d Func;     // y' = F(x, y)
+  function Func;     // y' = F(x, y)
   point Initial;  // x0, y0
 
 public:
-  const func3d &F;
+  const function &F;
   const point &P;
 
-  differential_first_order( const func3d &Function, const point &Initials ) : Func(Function), Initial(Initials),
+  differential_first_order( const function &Function, const point &Initials ) : Func(Function), Initial(Initials),
     F(Func), P(Initial) {
   }
 
