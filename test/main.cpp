@@ -8,13 +8,13 @@ using std::endl;
 
 int main( void ) {
   auto Y1 = []( double X, const std::vector<double> &Y ) -> double {
-      return 2 * Y[0];
+      return Y[1];
     };
   auto Y2 = []( double X, const std::vector<double> &Y ) -> double {
-      return 2 * Y[0] + Y[1];
+      return 3 * exp(X) - cos(X) * cos(X) * Y[0] - (1 + sin(X) * sin(X)) * Y[1];
     };
-  equations::sde Sys({Y1, Y2}, 0, {1, 2});
-  solvers::sde_runge_kutta<4> Solver(Sys, 0.1);
+  equations::sde Sys({Y1, Y2}, 0, {1, 1});
+  solvers::sde_runge_kutta<4> Solver(Sys, 0.01);
 
   double Points[] = { 1, 2, 3, 4 };
   for (const auto &Pt : Points) {
@@ -22,7 +22,7 @@ int main( void ) {
     cout << Pt << ": ";
     for (const auto &Y : Sol)
       cout << Y << "; ";
-    cout << endl;
+    cout << "in " << Solver.getNumSteps() << endl;
   }
 
   _getch();

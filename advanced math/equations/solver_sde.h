@@ -32,6 +32,7 @@ public:
         double Max = 0;
         for (int i = 0, Size = Y.size(); i < Size; i++)
           Max = std::max(Max, abs(Y[i] - YPrev[i]));
+        std::cout << Max << std::endl;
         return Max;
       };
 
