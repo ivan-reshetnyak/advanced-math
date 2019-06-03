@@ -9,7 +9,12 @@ namespace adv_math {
 namespace equations {
 
 template<int NoofStages>
-class solver_runge_kutta {
+class solver_runge_kutta : public function {
+private:
+  void print( std::ostream &Stream ) const override {
+    Stream << "RK_" << NoofStages;
+  }
+
 protected:
   int NoofSteps;
   mutable double H;
@@ -19,17 +24,7 @@ protected:
   virtual double weight( int X ) const = 0;
   virtual double node( int Y ) const = 0;
 
-  /*
-  double k( int Stage, double H, double X, double Y ) {
-    if (Stage == 0)
-      return Equation(X, Y);
-
-    
-  }
-  */
-
-public:
-  virtual std::valarray<double> operator()( double X ) const {
+  virtual double at( double X ) const override {
     auto Y = Equation.P.Y;
     H = (X - Equation.P.X) / NoofSteps;
     X = Equation.P.X;
@@ -49,9 +44,10 @@ public:
       X += H;
     }
 
-    return Y;
+    return Y[Y.size() - 1];
   }
 
+public:
   solver_runge_kutta( const differential_first_order &Eq, int Steps ) : NoofSteps(Steps), Equation(Eq) {
   }
 };
