@@ -29,7 +29,8 @@ int main( void ) {
 
   equations::differential_first_order DifEq([]( double X, double Y ) -> double { return 2 * Y; }, point(0, 1));
   //equations::solver_RK4 RKSolver(DifEq, 100);
-  equations::solver_euler_cauchy RKSolver(DifEq, 100);
+  //equations::solver_euler_cauchy RKSolver(DifEq, 100);
+  equations::solver_predictor_corrector<equations::solver_euler_cauchy, equations::solver_RK4> RKSolver(DifEq, 100);
 
   cout << RKSolver(1) << " " << RKSolver(2) << " " << RKSolver(3) << endl;
 

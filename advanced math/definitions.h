@@ -34,7 +34,10 @@ public:
   point & operator+=( const point &R );
   point operator-( const point &R ) const;
   point & operator-=( const point &R );
+  point & operator*( double Mul );
 };
+
+point & operator*( double Mul, point &P );
 
 class grid : public std::vector<point> {
 public:

@@ -31,6 +31,16 @@ point & point::operator-=( const point &R ) {
   return *this;
 }
 
+point & point::operator*( double Mul ) {
+  X *= Mul;
+  Y *= Mul;
+  return *this;
+}
+
+point & operator*( double Mul, point &P ) {
+  return P * Mul;
+}
+
 grid::grid( const std::vector<double> &Xs, const std::vector<double> &Ys ) {
   int Size = min(Xs.size(), Ys.size());
   resize(Size);

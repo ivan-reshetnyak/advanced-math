@@ -14,6 +14,7 @@
 // Differential
 #include "equations/equation_differential.h"
 #include "equations/solver_runge_kutta.h"
+#include "equations/solver_predictor_corrector.h"
 
 // Grids
 #include "grids/grid_chebyshev.h"
