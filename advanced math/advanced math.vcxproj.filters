@@ -132,6 +132,18 @@
     <ClInclude Include="equations\solver.h">
       <Filter>Source Files\Equations\Linear</Filter>
     </ClInclude>
+    <ClInclude Include="equations\sde.h">
+      <Filter>Source Files\Equations\Differential</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_sde.h">
+      <Filter>Source Files\Equations\Differential</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_sde_runge_kutta.h">
+      <Filter>Source Files\Equations\Differential</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\runge_kutta_coeffs.h">
+      <Filter>Source Files\Equations\Differential</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="function\function.cpp">

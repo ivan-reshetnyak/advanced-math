@@ -153,11 +153,15 @@
     <ClInclude Include="advanced math.h" />
     <ClInclude Include="definitions.h" />
     <ClInclude Include="equations\equation_differential.h" />
+    <ClInclude Include="equations\runge_kutta_coeffs.h" />
+    <ClInclude Include="equations\sde.h" />
     <ClInclude Include="equations\solver_differential.h" />
     <ClInclude Include="equations\solver_predictor_corrector.h" />
     <ClInclude Include="equations\solver_runge_kutta.h" />
     <ClInclude Include="equations\sle.h" />
     <ClInclude Include="equations\solver.h" />
+    <ClInclude Include="equations\solver_sde.h" />
+    <ClInclude Include="equations\solver_sde_runge_kutta.h" />
     <ClInclude Include="equations\solver_sle_inverse.h" />
     <ClInclude Include="equations\solver_sle_lu.h" />
     <ClInclude Include="equations\solver_sle_triangular.h" />

@@ -1,12 +1,13 @@
 #pragma once
 
+// Basic
 #include "definitions.h"
 #include "matrix.h"
 #include "vector.h"
 
 // Equations
 #include "equations/solver.h"
-// Linear
+// Linear systems
 #include "equations/sle.h"
 #include "equations/solver_sle_inverse.h"
 #include "equations/solver_sle_triangular.h"
@@ -15,6 +16,10 @@
 #include "equations/equation_differential.h"
 #include "equations/solver_runge_kutta.h"
 #include "equations/solver_predictor_corrector.h"
+// Differential systems
+#include "equations/sde.h"
+#include "equations/solver_sde.h"
+#include "equations/solver_sde_runge_kutta.h"
 
 // Grids
 #include "grids/grid_chebyshev.h"
