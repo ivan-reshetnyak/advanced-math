@@ -15,7 +15,7 @@ protected:
   virtual double node( int Y ) const = 0;
 
   virtual double at( double X, double Step ) const override {
-    auto Y = Equation.P.Y;
+    double Y = Equation.P.Y;
     int NoofSteps = (int)((X - Equation.P.X) / Step);
     X = Equation.P.X;
 
@@ -34,7 +34,7 @@ protected:
       X += Step;
     }
 
-    return Y[Y.size() - 1];
+    return Y;
   }
 
   void print( std::ostream &Stream ) const override {
@@ -86,7 +86,7 @@ private:
   }
 
 public:
-  euler_cauchy ( const equations::differential &Eq, double Precision ) : runge_kutta(Eq, Precision, 2) {
+  euler_cauchy( const equations::differential &Eq, double Precision ) : runge_kutta(Eq, Precision, 2) {
   }
 };
 

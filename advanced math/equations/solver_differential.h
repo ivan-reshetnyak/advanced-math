@@ -40,6 +40,10 @@ public:
     return NumSteps;
   }
 
+  int getOrder( void ) const {
+    return Order;
+  }
+
   differential( const equations::differential &Eq, double Precision, int Order ) :
     Equation(Eq), Precision(Precision), Order(Order) {
   }

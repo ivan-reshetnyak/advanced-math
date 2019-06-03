@@ -12,10 +12,6 @@ namespace equations {
 
 class differential {
 public:
-  struct point {
-    double X;
-    std::valarray<double> Y;
-  };
   using function = std::function<double ( const point & )>;
 
 private:

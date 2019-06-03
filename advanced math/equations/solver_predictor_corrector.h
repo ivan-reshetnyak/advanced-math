@@ -11,10 +11,6 @@ namespace solvers {
 template<class predictor, class corrector>
 class predictor_corrector : public differential {
 private:
-  using dif_eq = equations::differential;
-  int NoofSteps;
-  const dif_eq &Equation;
-
   virtual void print( std::ostream &Stream ) const override {
   }
 
@@ -25,16 +21,17 @@ private:
 
     for (int StepNum = 0; StepNum < NoofSteps; StepNum++) {
       X += Step;
-      double PredY = predictor(dif_eq(Equation.F, point(X, Y)), 1)(X + Step);
+      double PredY = predictor(equations::differential(Equation.F, point(X, Y)), 0x7FFFFFFF)(X + Step);
       point Midpoint = 0.5 * (point(X, Y) + point(X + Step, PredY));
-      Y = corrector(dif_eq(Equation.F, Midpoint), 1)(X + Step);
+      Y = corrector(equations::differential(Equation.F, Midpoint), 0x7FFFFFFF)(X + Step);
     }
 
     return Y;
   }
 
 public:
-  predictor_corrector( const equations::differential &Eq, double Precision ) : differential(Eq, Precision) {
+  predictor_corrector( const equations::differential &Eq, double Precision ) :
+    differential(Eq, Precision, corrector(Eq, Precision).getOrder()) {
   }
 };
 
