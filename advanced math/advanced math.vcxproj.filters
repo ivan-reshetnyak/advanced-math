@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Approximation\Instances">
       <UniqueIdentifier>{08ef0c2b-a046-458d-b2e0-d7dec008e189}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Equations\Differential\Cauchy">
+      <UniqueIdentifier>{185ddc51-e793-4958-9212-b1509c646e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Equations\Differential\Boundary">
+      <UniqueIdentifier>{0af6a1e0-60d9-4100-944d-922d69a11629}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -117,32 +123,41 @@
     <ClInclude Include="equations\sle.h">
       <Filter>Source Files\Equations\Linear</Filter>
     </ClInclude>
-    <ClInclude Include="equations\solver_runge_kutta.h">
-      <Filter>Source Files\Equations\Differential</Filter>
-    </ClInclude>
-    <ClInclude Include="equations\equation_differential.h">
-      <Filter>Source Files\Equations\Differential</Filter>
-    </ClInclude>
-    <ClInclude Include="equations\solver_predictor_corrector.h">
-      <Filter>Source Files\Equations\Differential</Filter>
-    </ClInclude>
-    <ClInclude Include="equations\solver_differential.h">
-      <Filter>Source Files\Equations\Differential</Filter>
-    </ClInclude>
     <ClInclude Include="equations\solver.h">
       <Filter>Source Files\Equations\Linear</Filter>
     </ClInclude>
+    <ClInclude Include="equations\differential_coeffs.h">
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\equation_differential.h">
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
+    </ClInclude>
     <ClInclude Include="equations\sde.h">
-      <Filter>Source Files\Equations\Differential</Filter>
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_differential.h">
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_predictor_corrector.h">
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_runge_kutta.h">
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
     </ClInclude>
     <ClInclude Include="equations\solver_sde.h">
-      <Filter>Source Files\Equations\Differential</Filter>
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
     </ClInclude>
     <ClInclude Include="equations\solver_sde_runge_kutta.h">
-      <Filter>Source Files\Equations\Differential</Filter>
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
     </ClInclude>
-    <ClInclude Include="equations\differential_coeffs.h">
-      <Filter>Source Files\Equations\Differential</Filter>
+    <ClInclude Include="equations\equation_boundary.h">
+      <Filter>Source Files\Equations\Differential\Boundary</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_boundary_finite_difference.h">
+      <Filter>Source Files\Equations\Differential\Boundary</Filter>
+    </ClInclude>
+    <ClInclude Include="equations\solver_boundary.h">
+      <Filter>Source Files\Equations\Differential\Boundary</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

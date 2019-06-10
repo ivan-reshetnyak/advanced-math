@@ -20,6 +20,10 @@
 #include "equations/sde.h"
 #include "equations/solver_sde.h"
 #include "equations/solver_sde_runge_kutta.h"
+// Boundary
+#include "equations/equation_boundary.h"
+#include "equations/solver_boundary.h"
+#include "equations/solver_boundary_finite_difference.h"
 
 // Grids
 #include "grids/grid_chebyshev.h"
