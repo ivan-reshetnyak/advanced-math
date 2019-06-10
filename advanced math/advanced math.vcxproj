@@ -23,7 +23,6 @@
     <ProjectGuid>{2561AD00-9790-453D-87CD-6289E1194A21}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>source</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectName>advanced math</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -153,7 +152,7 @@
     <ClInclude Include="advanced math.h" />
     <ClInclude Include="definitions.h" />
     <ClInclude Include="equations\equation_differential.h" />
-    <ClInclude Include="equations\runge_kutta_coeffs.h" />
+    <ClInclude Include="equations\differential_coeffs.h" />
     <ClInclude Include="equations\sde.h" />
     <ClInclude Include="equations\solver_differential.h" />
     <ClInclude Include="equations\solver_predictor_corrector.h" />

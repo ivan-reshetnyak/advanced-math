@@ -3,7 +3,7 @@
 #include "../stdafx.h"
 
 #include "../function/function.h"
-#include "runge_kutta_coeffs.h"
+#include "differential_coeffs.h"
 #include "solver_differential.h"
 
 namespace adv_math {
@@ -12,6 +12,11 @@ namespace solvers {
 template<int RKOrder>
 class runge_kutta : public differential {
 protected:
+  void print( std::ostream &Stream ) const override {
+    Stream << "RK_" << Order;
+  }
+
+public:
   virtual double at( double X, double Step ) const override {
     double Y = Equation.P.Y;
     int NoofSteps = (int)((X - Equation.P.X) / Step);
@@ -35,9 +40,6 @@ protected:
     return Y;
   }
 
-  void print( std::ostream &Stream ) const override {
-    Stream << "RK_" << Order;
-  }
 
 public:
   runge_kutta( const equations::differential &Eq, double Precision ) : differential(Eq, Precision, RKOrder) {

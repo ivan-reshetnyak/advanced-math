@@ -16,14 +16,13 @@ protected:
   mutable int NumSteps;
 
   virtual void print( std::ostream &Stream ) const override = 0;
-  virtual double at( double X, double Step ) const = 0;
 
   double at( double X ) const final {
+    NumSteps = Order + 1;
     double
       Denum = (1 << Order) - 1,
-      Step = X - Equation.P.X,
+      Step = (X - Equation.P.X) / NumSteps,
       YPrev = 0, Y = at(X, Step);
-    NumSteps = 1;
 
     while (abs(YPrev - Y) > Precision) {
       YPrev = Y;
@@ -36,6 +35,8 @@ protected:
   }
 
 public:
+  virtual double at( double X, double Step ) const = 0;
+
   int getNumSteps( void ) const {
     return NumSteps;
   }

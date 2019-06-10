@@ -141,7 +141,7 @@
     <ClInclude Include="equations\solver_sde_runge_kutta.h">
       <Filter>Source Files\Equations\Differential</Filter>
     </ClInclude>
-    <ClInclude Include="equations\runge_kutta_coeffs.h">
+    <ClInclude Include="equations\differential_coeffs.h">
       <Filter>Source Files\Equations\Differential</Filter>
     </ClInclude>
   </ItemGroup>

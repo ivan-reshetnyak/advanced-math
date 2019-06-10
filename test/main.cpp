@@ -7,6 +7,7 @@ using std::cout;
 using std::endl;
 
 int main( void ) {
+  /*
   auto Y1 = []( double X, const std::vector<double> &Y ) -> double {
       return Y[1];
     };
@@ -23,6 +24,19 @@ int main( void ) {
     for (const auto &Y : Sol)
       cout << Y << "; ";
     cout << "in " << Solver.getNumSteps() << endl;
+  }
+  */
+  auto Func = []( const point &P ) -> double {
+      return P.Y;
+    };
+  equations::differential Eq(Func, {0, 1});
+  solvers::predictor_corrector<solvers::runge_kutta<2>, 2> Solver(Eq, 0.1);
+
+  double Points[] = { 1, 2, 3, 4 };
+  for (const auto &Pt : Points) {
+    double Y = Solver(Pt);
+    cout << Pt << ": " << Y
+         << " in " << Solver.getNumSteps() << endl;
   }
 
   _getch();
