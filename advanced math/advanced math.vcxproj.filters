@@ -159,6 +159,9 @@
     <ClInclude Include="equations\solver_boundary.h">
       <Filter>Source Files\Equations\Differential\Boundary</Filter>
     </ClInclude>
+    <ClInclude Include="equations\solver_sde_predictor_corrector.h">
+      <Filter>Source Files\Equations\Differential\Cauchy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="function\function.cpp">

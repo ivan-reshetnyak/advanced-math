@@ -11,19 +11,25 @@ namespace adv_math {
 namespace solvers {
 
 class sde {
+private:
+  mutable int NumSteps;
 protected:
   equations::sde System;
   double Precision;
   int Order;
-  mutable int NumSteps;
-
-  virtual std::vector<double> at( double X, double Step ) const = 0;
 
 public:
+  virtual std::vector<std::vector<double>> values( double X, int Divs ) const = 0;
+
+  virtual std::vector<double> at( double X, double Step ) const {
+    return values(X, (int)((X - System.X0) / Step)).back();
+  }
+
   std::vector<double> operator()( double X ) const {
+    NumSteps = Order + 1;
     double
       Denum = (1 << Order) - 1,
-      Step = X - System.X0;
+      Step = (X - System.X0) / NumSteps;
 
     std::vector<double>
       YPrev(System.Rows.size(), 0),
@@ -35,8 +41,6 @@ public:
         //std::cout << Max << std::endl;
         return Max;
       };
-
-    NumSteps = 1;
 
     while (getMaxError() > Precision) {
       YPrev = Y;

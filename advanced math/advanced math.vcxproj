@@ -164,6 +164,7 @@
     <ClInclude Include="equations\sle.h" />
     <ClInclude Include="equations\solver.h" />
     <ClInclude Include="equations\solver_sde.h" />
+    <ClInclude Include="equations\solver_sde_predictor_corrector.h" />
     <ClInclude Include="equations\solver_sde_runge_kutta.h" />
     <ClInclude Include="equations\solver_sle_inverse.h" />
     <ClInclude Include="equations\solver_sle_lu.h" />

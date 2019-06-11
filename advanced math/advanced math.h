@@ -20,6 +20,7 @@
 #include "equations/sde.h"
 #include "equations/solver_sde.h"
 #include "equations/solver_sde_runge_kutta.h"
+#include "equations/solver_sde_predictor_corrector.h"
 // Boundary
 #include "equations/equation_boundary.h"
 #include "equations/solver_boundary.h"
